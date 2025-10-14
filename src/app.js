@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://mern-auth-frontend-nu-taupe.vercel.app", // your frontend domain
+    origin: "https://mern-auth-frontend-seven-indol.vercel.app/", // your frontend domain
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
