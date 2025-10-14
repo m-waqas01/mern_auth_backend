@@ -12,10 +12,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000", // for local frontend
-      "https://mern-auth-frontend.vercel.app", // for deployed frontend
-    ],
+    origin: "https://mern-auth-frontend-nu-taupe.vercel.app", // your frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
