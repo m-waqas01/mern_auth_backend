@@ -3,6 +3,7 @@ import cors from "cors";
 
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
+import mongoose from "mongoose";
 
 dotenv.config();
 const app = express();
@@ -25,6 +26,12 @@ app.use("/api", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");
+});
+
+app.get("/test-db", (req, res) => {
+  const state = mongoose.connection.readyState;
+  const states = ["disconnected", "connected", "connecting", "disconnecting"];
+  res.json({ dbState: states[state] });
 });
 
 export default app;
