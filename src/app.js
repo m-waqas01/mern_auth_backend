@@ -34,4 +34,10 @@ app.get("/test-db", (req, res) => {
   res.json({ dbState: states[state] });
 });
 
+app.get("/check-env", (req, res) => {
+  res.json({
+    MONGO_URI: process.env.MONGO_URI ? "✅ Exists" : "❌ Missing",
+  });
+});
+
 export default app;
